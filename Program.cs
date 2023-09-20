@@ -113,17 +113,18 @@ void AvaliarUmaBanda() {
 
 void MediaDaBanda() {
     Console.Clear();
-    ExibirTituloDaOpcao("Média da Banda");
-    Console.Write("Digite o nome da banda que deseja consultar a média das notas: ");
-    string consultarBanda = Console.ReadLine()!;
-    if (bandasRegistradas.ContainsKey(consultarBanda)) {
-        double media = bandasRegistradas[consultarBanda].Average();
-        Console.WriteLine($"A média de notas da banda {consultarBanda} é: {media}");
-        Thread.Sleep(4000);
+    ExibirTituloDaOpcao("Exibir Média da Banda");
+    Console.Write("Digite o nome da banda que deseja exibir a média: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeDaBanda)) {
+        double media = bandasRegistradas[nomeDaBanda].Average();
+        Console.WriteLine($"A média de notas da banda {nomeDaBanda} é: {media}");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal.");
+        Console.ReadKey();
         Console.Clear();
         ExibirOpcoesDoMenu();
     } else {
-        Console.WriteLine($"\nA banda {consultarBanda} não foi encontrada!");
+        Console.WriteLine($"\nA banda {nomeDaBanda} não foi encontrada!");
         Console.WriteLine("Digite uma tecla para voltar ao menu principal.");
         Console.ReadKey();
         Console.Clear();
