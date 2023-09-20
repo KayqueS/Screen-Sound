@@ -118,7 +118,7 @@ void MediaDaBanda() {
     string nomeDaBanda = Console.ReadLine()!;
     if (bandasRegistradas.ContainsKey(nomeDaBanda)) {
         double media = bandasRegistradas[nomeDaBanda].Average();
-        Console.WriteLine($"A média de notas da banda {nomeDaBanda} é: {media}");
+        Console.WriteLine($"\nA média de notas da banda {nomeDaBanda} é: {media}");
         Console.WriteLine("Digite uma tecla para voltar ao menu principal.");
         Console.ReadKey();
         Console.Clear();
